@@ -1,0 +1,10 @@
+#main-header {
+    position: relative;
+    height: auto;
+}
+
+#main-header ul > li > a{
+    /* @apply text-orange-400; */
+    text-decoration: none;
+}
+
