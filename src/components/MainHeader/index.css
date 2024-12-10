@@ -4,7 +4,30 @@
 }
 
 #main-header ul > li > a{
-    /* @apply text-orange-400; */
     text-decoration: none;
 }
+
+.show > li {
+    @apply m-5
+}
+
+.mobile-hide {
+    @apply hidden
+}
+
+.mobile-show {
+    @apply flex flex-col justify-center w-screen h-screen p-3 bg-gray-500 fixed top-0 z-10;
+}
+
+.desktop-menu {
+    @apply hidden relative sm:flex flex-row top-0 left-0 justify-evenly w-screen p-2 h-16;
+    border: 1px solid red;
+
+}
+
+.desktop-menu > li {
+    @apply p-2 m-2
+}
+
+
 
