@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import "./index.css";
 import { useState } from "react";
+import { ArchiveBoxIcon, HomeIcon, LinkIcon } from "@heroicons/react/16/solid";
 
 function MainHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -51,13 +52,16 @@ function MainHeader() {
             </li>
           </ul>
           <ul className={`desktop-menu`}>
-            <li className="text-center">
+            <li>
+              <HomeIcon className="menu-icons" />
               <Link to="/">Home</Link>
             </li>
-            <li className="text-center">
+            <li>
+              <ArchiveBoxIcon className="menu-icons" />
               <Link to="/catalog">Catálogo de Jogos</Link>
             </li>
-            <li className="text-center">
+            <li>
+              <LinkIcon className="menu-icons" />
               <Link to="/contact">Contato</Link>
             </li>
           </ul>

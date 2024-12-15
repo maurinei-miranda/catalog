@@ -1,10 +1,8 @@
 import PropTypes from 'prop-types'
 
 const PageTitle = function({valor}) {
-    // let value = props.valor
-    console.log("Renderizando Title")
     return (
-        <h2 className='m-5 text-center'>
+        <h2 className='m-5 text-center font-bold font-mono sm:text-2xl'>
             {valor}
         </h2>
     )

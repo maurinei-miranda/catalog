@@ -1,0 +1,3 @@
+.game-card {
+    @apply p-2 text-center border-red-200 border-2
+}

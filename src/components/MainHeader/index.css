@@ -26,7 +26,11 @@
 }
 
 .desktop-menu > li {
-    @apply p-2 m-2
+    @apply p-2 m-2 text-center flex space-x-2 items-center
+}
+
+.desktop-menu .menu-icons {
+    @apply h-6 w-6
 }
 
 
