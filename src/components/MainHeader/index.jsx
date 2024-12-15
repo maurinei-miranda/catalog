@@ -10,6 +10,9 @@ function MainHeader() {
     setIsMenuOpen(!isMenuOpen);
   };
 
+
+  //TODO passar para um component
+
   return (
     <>
       <header id="main-header" className="w-screen flex justify-start">
@@ -35,17 +38,17 @@ function MainHeader() {
             ></div>
           </button>
           <ul className={`${isMenuOpen ? "mobile-show" : "mobile-hide"} z-20`}>
-            <li className="text-center">
+            <li>
               <Link onClick={isMenuOpenHandle} to="/">
                 Home
               </Link>
             </li>
-            <li className="text-center">
+            <li>
               <Link onClick={isMenuOpenHandle} to="/catalog">
                 Catálogo de Jogos
               </Link>
             </li>
-            <li className="text-center">
+            <li>
               <Link onClick={isMenuOpenHandle} to="/contact">
                 Contato
               </Link>

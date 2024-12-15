@@ -1,37 +1,37 @@
 #main-header {
-    position: relative;
-    height: auto;
+  position: relative;
+  height: auto;
 }
 
-#main-header ul > li > a{
-    text-decoration: none;
+#main-header ul > li > a {
+  text-decoration: none;
 }
 
 .show > li {
-    @apply m-5
+  @apply m-5;
 }
 
 .mobile-hide {
-    @apply hidden
+  @apply hidden;
 }
 
 .mobile-show {
-    @apply flex flex-col justify-center w-screen h-screen p-3 bg-gray-500 fixed top-0 z-10;
+  @apply flex flex-col justify-center w-screen h-screen p-3 bg-gray-500 fixed top-0 z-10;
+}
+
+.mobile-show li {
+  @apply m-2 p-2 border rounded-3xl text-center;
 }
 
 .desktop-menu {
-    @apply hidden relative sm:flex flex-row top-0 left-0 justify-evenly w-screen p-2 h-16;
-    border: 1px solid red;
-
+  @apply hidden relative sm:flex flex-row top-0 left-0 justify-evenly w-screen p-2 h-16;
+  border: 1px solid red;
 }
 
 .desktop-menu > li {
-    @apply p-2 m-2 text-center flex space-x-2 items-center
+  @apply p-2 m-2 text-center flex space-x-2 items-center;
 }
 
 .desktop-menu .menu-icons {
-    @apply h-6 w-6
+  @apply h-6 w-6;
 }
-
-
-
