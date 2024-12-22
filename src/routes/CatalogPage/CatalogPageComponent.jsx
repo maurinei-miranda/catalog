@@ -8,68 +8,47 @@ function CatalogPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // const fetchGames = async () => {
-  //   console.log("Fetching Games Data");
-  //   try {
-  //     const response = await fetch("https://api.examples.com/games");
-  //     if (!response.ok) {
-  //       throw new Error(`HTTP Error! status: ${response.status}`);
-  //     }
-  //     const data = await response.json();
-  //     setGames(data);
-  //   } catch (err) {
-  //     setError(err.message);
-  //   } finally {
-  //     setLoading(false);
-  //   }
-  // };
-
-  const gamesMock = [
-    {
-      title: "Warzone",
-      primaryPrice: "199,99",
-      parentalPrice: "19,90",
-      img: "",
-    },
-    { title: "XPTO", primaryPrice: "199,99", parentalPrice: "19,90", img: "" },
-    {
-      title: "Warzone",
-      primaryPrice: "199,99",
-      parentalPrice: "19,90",
-      img: "",
-    },
-    {
-      title: "Warzone",
-      primaryPrice: "199,99",
-      parentalPrice: "19,90",
-      img: "",
-    },
-    {
-      title: "Warzone",
-      primaryPrice: "199,99",
-      parentalPrice: "19,90",
-      img: "",
-    },
-  ];
+  const fetchGames = async () => {
+    console.log("Fetching Games Data");
+    try {
+      const response = await fetch("http://192.168.100.135:3000/games").catch();
+      if (!response.ok) {
+        throw new Error(`HTTP Error! status: ${response.status}`);
+      }
+      const data = await response.json();
+      setGames(data);
+      setLoading(false);
+    } catch (err) {
+      err.message == "Failed to fetch"
+        ? setError("Falha ao buscar jogos")
+        : setError(err.message);
+      // setError(err.message);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   useEffect(() => {
-    //TODO mudar para chamada do fetch
-    setGames(gamesMock);
-    setLoading(false)
-    // setError("Falha ao carregar")
-  }, [])
-
+    fetchGames();
+  }, []);
 
   if (loading) return <p> Loading..</p>;
-  if (error) return <p> Error: {error} </p>;
+  if (error) {
+    return (
+      <div>
+        <PageTitle valor="Catálogo de Jogos" />
+        <p className="text-center"> Error: {error} </p>
+      </div>
+    );
+  }
 
   return (
     <div>
       <PageTitle valor="Catálogo de Jogos" />
       <div id="games-catalog">
-        {games.map((game, index) => (
+        {games.map((game) => (
           <GameCard
-            key={index}
+            key={game.id}
             title={game.title}
             primariaPreco={game.primaryPrice}
             parentalPreco={game.parentalPrice}

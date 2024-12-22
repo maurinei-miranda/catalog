@@ -1,0 +1,39 @@
+{
+  "games": [
+    {
+      "id": 1,
+      "title": "Assassin's Creed Origins",
+      "primaryPrice": "Included with Game Pass",
+      "parentalPrice": "N/A",
+      "img": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1wyy.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Forza Horizon 5",
+      "primaryPrice": "Included with Game Pass",
+      "parentalPrice": "N/A",
+      "img": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2l5r.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Halo: The Master Chief Collection",
+      "primaryPrice": "Included with Game Pass",
+      "parentalPrice": "N/A",
+      "img": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1wyy.jpg"
+    },
+    {
+      "id": 4,
+      "title": "Minecraft",
+      "primaryPrice": "Included with Game Pass",
+      "parentalPrice": "N/A",
+      "img": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1r57.jpg"
+    },
+    {
+      "id": 5,
+      "title": "Doom Eternal",
+      "primaryPrice": "Included with Game Pass",
+      "parentalPrice": "N/A",
+      "img": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1r57.jpg"
+    }
+  ]
+}
