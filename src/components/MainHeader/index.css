@@ -19,7 +19,7 @@
   @apply flex flex-col justify-center w-screen h-screen p-3 bg-gray-500 fixed top-0 z-10;
 }
 
-.mobile-show li {
+.mobile-show a {
   @apply m-2 p-2 border rounded-3xl text-center;
 }
 

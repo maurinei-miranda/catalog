@@ -5,13 +5,44 @@ import { ArchiveBoxIcon, HomeIcon, LinkIcon } from "@heroicons/react/16/solid";
 
 function MainHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  // TODO talvez o useEffect
   const isMenuOpenHandle = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const menuItems = [
+    {
+      key: "home",
+      textProp: "Página Inicial",
+      toProp: "/",
+      icon: HomeIcon,
+    },
+    {
+      key: "catalog",
+      textProp: "Catálogo de Jogos",
+      toProp: "/catalog",
+      icon: HomeIcon,
+    },
+    {
+      key: "contact",
+      textProp: "Contatos",
+      toProp: "/contact",
+      icon: HomeIcon,
+    },
+  ];
 
-  //TODO passar para um component
+  const mobileMenuMapper = function () {
+    return menuItems.map((menuItem) => {
+      return (
+        <Link
+          key={menuItem.key}
+          to={menuItem.toProp}
+          onClick={isMenuOpenHandle}
+        >
+          {menuItem.textProp}
+        </Link>
+      );
+    });
+  };
 
   return (
     <>
@@ -37,23 +68,11 @@ function MainHeader() {
               }`}
             ></div>
           </button>
-          <ul className={`${isMenuOpen ? "mobile-show" : "mobile-hide"} z-20`}>
-            <li>
-              <Link onClick={isMenuOpenHandle} to="/">
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link onClick={isMenuOpenHandle} to="/catalog">
-                Catálogo de Jogos
-              </Link>
-            </li>
-            <li>
-              <Link onClick={isMenuOpenHandle} to="/contact">
-                Contato
-              </Link>
-            </li>
-          </ul>
+          {/* Mobile menu */}
+          <div className={`${isMenuOpen ? "mobile-show" : "mobile-hide"} z-20`}>
+            {mobileMenuMapper()}
+          </div>
+          {/* Desktop menu */}
           <ul className={`desktop-menu`}>
             <li>
               <HomeIcon className="menu-icons" />
