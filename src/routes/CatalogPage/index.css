@@ -3,6 +3,6 @@
 }
 
 #games-catalog {
-    @apply grid grid-cols-3 gap-3 p-1 text-center place-items-center sm:grid-cols-4 md:grid-cols-5
+    @apply grid grid-cols-3 gap-3 p-1 text-center place-items-start sm:grid-cols-4 md:grid-cols-5 pt-5
 }
 

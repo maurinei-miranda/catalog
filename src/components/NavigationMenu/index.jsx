@@ -2,8 +2,9 @@ import { Link } from "react-router-dom";
 import "./index.css";
 import { useState } from "react";
 import { ArchiveBoxIcon, HomeIcon, LinkIcon } from "@heroicons/react/16/solid";
+import ROUTES from '../../routes/routes.js'
 
-function MainHeader() {
+function NavigationMenu() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const isMenuOpenHandle = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -13,19 +14,19 @@ function MainHeader() {
     {
       key: "home",
       textProp: "Página Inicial",
-      toProp: "/",
+      toProp: ROUTES.HOME,
       icon: HomeIcon,
     },
     {
       key: "catalog",
       textProp: "Catálogo de Jogos",
-      toProp: "/catalog",
+      toProp: ROUTES.CATALOG,
       icon: HomeIcon,
     },
     {
       key: "contact",
       textProp: "Contatos",
-      toProp: "/contact",
+      toProp: ROUTES.CONTACT,
       icon: HomeIcon,
     },
   ];
@@ -46,9 +47,9 @@ function MainHeader() {
 
   return (
     <>
-      <header id="main-header" className="w-screen flex justify-start">
-        <nav className="">
-          <button
+      <header id="main-header" className="w-screen flex">
+        <nav className="flex w-screen justify-end p-0.5">
+          <button id="burgerButton"
             onClick={isMenuOpenHandle}
             className="fixed z-30 sm:hidden focus:outline-none h-10"
           >
@@ -76,15 +77,15 @@ function MainHeader() {
           <ul className={`desktop-menu`}>
             <li>
               <HomeIcon className="menu-icons" />
-              <Link to="/">Home</Link>
+              <Link to={ROUTES.HOME}>Home</Link>
             </li>
             <li>
               <ArchiveBoxIcon className="menu-icons" />
-              <Link to="/catalog">Catálogo de Jogos</Link>
+              <Link to={ROUTES.CATALOG}>Catálogo de Jogos</Link>
             </li>
             <li>
               <LinkIcon className="menu-icons" />
-              <Link to="/contact">Contato</Link>
+              <Link to={ROUTES.CONTACT}>Contato</Link>
             </li>
           </ul>
         </nav>
@@ -93,4 +94,4 @@ function MainHeader() {
   );
 }
 
-export default MainHeader;
+export default NavigationMenu;
