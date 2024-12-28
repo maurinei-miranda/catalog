@@ -1,6 +1,6 @@
 import GameCard from "../../components/GameCard/GameCardComponent";
 import PageTitle from "../../components/PageTitle/PageTitleComponent";
-import "./index.css";
+import "./catalog-page.css";
 import { useState, useEffect } from "react";
 import { createClient } from "@supabase/supabase-js";
 

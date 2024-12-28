@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import "./GameCardStyle.css";
+import "./game-card.css";
 
 const GameCard = (props) => {
   let titulo = props.title;

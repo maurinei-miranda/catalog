@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import "./index.css";
+import "./navigation-menu.css";
 import { useState } from "react";
 import { ArchiveBoxIcon, HomeIcon, LinkIcon } from "@heroicons/react/16/solid";
-import ROUTES from '../../routes/routes.js'
+import ROUTES from "../../routes/routes.js";
 
 function NavigationMenu() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -21,26 +21,29 @@ function NavigationMenu() {
       key: "catalog",
       textProp: "Catálogo de Jogos",
       toProp: ROUTES.CATALOG,
-      icon: HomeIcon,
+      icon: ArchiveBoxIcon,
     },
     {
       key: "contact",
       textProp: "Contatos",
       toProp: ROUTES.CONTACT,
-      icon: HomeIcon,
+      icon: LinkIcon,
     },
   ];
 
   const mobileMenuMapper = function () {
     return menuItems.map((menuItem) => {
       return (
-        <Link
-          key={menuItem.key}
-          to={menuItem.toProp}
-          onClick={isMenuOpenHandle}
-        >
-          {menuItem.textProp}
-        </Link>
+        <>
+          <Link
+            key={menuItem.key}
+            to={menuItem.toProp}
+            onClick={isMenuOpenHandle}
+          >
+            <menuItem.icon className="menu-icons" />
+            {menuItem.textProp}
+          </Link>
+        </>
       );
     });
   };
@@ -49,7 +52,8 @@ function NavigationMenu() {
     <>
       <header id="main-header" className="w-screen flex">
         <nav className="flex w-screen justify-end p-0.5">
-          <button id="burgerButton"
+          <button
+            id="burgerButton"
             onClick={isMenuOpenHandle}
             className="fixed z-30 sm:hidden focus:outline-none h-10"
           >

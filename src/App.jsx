@@ -1,10 +1,10 @@
 // import MainHeader from "./components/mainHeader/index.jsx";
 import "./App.css";
-import NavigationMenu from "./components/NavigationMenu/index.jsx";
+import NavigationMenu from "./components/NavigationMenu/NavigationMenuComponent.jsx";
 import { Routes, Route, BrowserRouter as Router } from "react-router-dom";
-import HomePage from "./routes/HomePage";
-import ContactPage from "./routes/ContactPage/contactPageComponent";
-import CatalogPage from "./routes/CatalogPage/CatalogPageComponent";
+import HomePage from "./routes/HomePage/HomePage.jsx";
+import ContactPage from "./routes/ContactPage/ContactPage.jsx";
+import CatalogPage from "./routes/CatalogPage/CatalogPage.jsx";
 import ROUTES from './routes/routes.js'
 
 

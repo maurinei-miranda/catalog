@@ -1,0 +1,11 @@
+#contact-list ul li svg {
+  @apply m-2;
+}
+
+#contact-list a {
+  @apply m-2 p-2 border-2 rounded-3xl border-orange-500 flex align-middle items-center;
+}
+
+#contact-list .menu-icons {
+  @apply h-5 m-1 mr-5;
+}
